@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Learn React",
+      "category": "Work",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "title": "Buy Groceries",
+      "category": "Personal",
+      "completed": false
+    },
+    {
+      "id": "3",
+      "title": "Plan Vacation",
+      "category": "Urgent",
+      "completed": false
+    },
+    {
+      "id": "1736987848237",
+      "title": "Attend meeting",
+      "category": "Personal"
+    }
+  ]
+}
