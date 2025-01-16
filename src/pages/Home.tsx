@@ -1,11 +1,17 @@
-import React from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DroppableProvided,
+  //@ts-expect-error Types for react-beautiful-dnd are not up to date
+} from "react-beautiful-dnd";
 import { useTaskContext } from "../context/TaskContext";
 
 const Home = () => {
   const { tasks, setTasks, deleteTask, addTask } = useTaskContext();
 
   // Handle the drag end to reorder tasks
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleDragEnd = (result: any) => {
     const { destination, source } = result;
     if (!destination) {
@@ -53,7 +59,7 @@ const Home = () => {
       <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="taskList">
-          {(provided) => (
+          {(provided: DroppableProvided) => (
             <div
               ref={provided.innerRef}
               {...provided.droppableProps}
@@ -61,7 +67,7 @@ const Home = () => {
             >
               {tasks.map((task, index) => (
                 <Draggable key={task.id} draggableId={task.id} index={index}>
-                  {(provided) => (
+                  {(provided: DroppableProvided) => (
                     <div
                       ref={provided.innerRef}
                       {...provided.draggableProps}
