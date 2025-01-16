@@ -43,3 +43,32 @@ Follow these steps to set up the app locally:
    git clone https://github.com/decryptus07/task-management-app.git
    cd task-management-app
    ```
+
+2. **Install Dependencies**:
+   We use pnpm as the package manager. If you don't have it installed, you can install it globally:
+
+   ```bash
+   npm install -g pnpm
+   ```
+
+   Then, install the project dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Start the Mock Backend**:
+   The app uses JSON Server to simulate a backend. To start the mock backend:
+
+   ```bash
+     pnpm run backend
+   ```
+
+   This will start the backend at http://localhost:5000.
+
+4. **Start the Development Server**:
+   After starting the backend, run the app locally:
+   ```bash
+   pnpm dev
+   ```
+   This will run the app at http://localhost:5173.
